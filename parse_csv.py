@@ -1,7 +1,6 @@
 my_dict = {}
 
-f = open("test.csv","r")
-for line in f:
+for line in open("test.csv","r"):
      a,b,c,num  = line.split(",")
      num = int(num)
      url = my_dict.get(a)
@@ -17,7 +16,6 @@ for line in f:
             my_dict[a] =  dict(my_dict[a].items() + temp_dict.items())
      else:
          my_dict[a] = {c:num}
-f.close()
 
 print my_dict
 
